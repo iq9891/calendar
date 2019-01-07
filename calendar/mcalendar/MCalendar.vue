@@ -175,9 +175,20 @@ export default {
         const loopNow = new Date(this.yearNumber, this.monthNumber - 1, i);
         days.push({
           num: i,
-          undo: this.disabledDate(loopNow, loopNow.getTime(), i, parseFloat(this.monthNumber), this.yearNumber),
+          undo: this.disabledDate(
+            loopNow,
+            loopNow.getTime(),
+            i,
+            parseFloat(this.monthNumber),
+            this.yearNumber,
+          ),
           today: clearHours(loopNow) === now,
-          choice: this.choicedDate(loopNow, loopNow.getTime(), i, parseFloat(this.monthNumber), this.yearNumber),
+          choice: this.choicedDate(
+            loopNow,
+            loopNow.getTime(),
+            i,
+            parseFloat(this.monthNumber), this.yearNumber,
+          ),
           active: clearHours(loopNow) === this.activeDay,
         });
       }
@@ -283,7 +294,7 @@ export default {
         this.$emit('next', this.activeDay, this.monthNumber, this.yearNumber);
       }
     },
-    choiceDay(day, month, year) {
+    choiceDay(day) {
       if (!day.undo) {
         this.activeDay = clearHours(new Date(this.yearNumber, this.monthNumber - 1, day.num));
         this.change(day, this.activeDay, this.monthNumber, this.yearNumber);
@@ -301,7 +312,7 @@ export default {
         this.choiceDay(day, month, year);
       }
       if (event.cancelable) {
-       event.preventDefault();
+        event.preventDefault();
       }
       this.touchPlace = 0;
     },
@@ -312,10 +323,10 @@ export default {
     },
   },
   watch: {
-    yearNumber(val, oldVal) {
+    yearNumber(val) {
       TweenLite.to(this.$data, this.animateTime, { yearAnim: val });
     },
-    monthNumber(val, oldVal) {
+    monthNumber(val) {
       TweenLite.to(this.$data, this.animateTime, { monthAnim: val });
     },
   },

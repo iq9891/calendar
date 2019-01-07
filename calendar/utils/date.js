@@ -1,7 +1,7 @@
 export const getDayCountOfMonth = (year, month) => {
   if (month === 3 || month === 5 || month === 8 || month === 10) {
     return 30;
-  } else if (month === 1) {
+  } if (month === 1) {
     if (((year % 4 === 0) && (year % 100 !== 0)) || year % 400 === 0) {
       return 29;
     }
@@ -32,7 +32,7 @@ export const getFirstDayOfMonth = (date) => {
   return temp.getDay();
 };
 
-export const patchZero = num => {
+export const patchZero = (num) => {
   const newNum = String(num);
   return newNum.length > 1 ? newNum : `0${newNum}`;
 };
@@ -41,6 +41,10 @@ export const getYear = date => date.getFullYear();
 
 export const getMonth = date => patchZero(date.getMonth() + 1);
 
-export const getDate = (date, isPatchZero = true) => isPatchZero ? patchZero(date.getDate()) : date.getDate();
+export const getDate = (date, isPatchZero = true) => (
+  isPatchZero
+    ? patchZero(date.getDate())
+    : date.getDate()
+);
 
 export const getDay = date => date.getDay();
