@@ -138,6 +138,9 @@
     "last 2 versions",
     "not ie <= 8"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "lint-staged": {
     "component/**/*.vue": [
       "npm run eslint"
