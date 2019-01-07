@@ -2,24 +2,173 @@
 @import "../../style/config.scss";
 
 .w-m-calendar {
-  @include px2rem('width', 707px);
-
-  background: rgba(0, 0, 0, 0.3);
+  @include px2rem('width', 702px);
 
   &-header {
-    @include px2rem('height', 52px);
+    @include px2rem('height', 84px);
 
     width: 100%;
     display: flex;
     position: relative;
+    justify-content: space-between;
   }
 
   &-arrow {
-    @include px2rem('width', 9px);
-    @include px2rem('height', 9px);
+    @include px2rem('width', 18px);
+    @include px2rem('height', 18px);
 
-    border-left: $arrow-color;
-    border-top: $arrow-color;
+    border-left: 1px solid $arrow-color;
+    border-top: 1px solid $arrow-color;
     position: absolute;
+
+    &-disabled {
+      border-left: 1px solid $arrow-disabled;
+      border-top: 1px solid $arrow-disabled;
+    }
+  }
+
+  &-left {
+    transform: rotate(-45deg);
+  }
+
+  &-right {
+    @include px2rem('margin-left', -2px);
+
+    transform: rotate(135deg);
+  }
+
+  &-btn {
+    @include px2rem('width', 78px);
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &-disabled {
+      cursor: no-drop;
+    }
+  }
+
+  &-now {
+    @include font(32px);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: $new-color;
+    line-height: 1;
+    font-family: 'PingFangSC-Regular';
+    letter-spacing: 0;
+  }
+
+  &-col {
+    width: 100%;
+    background: $col-color;
+    display: flex;
+  }
+
+  &-week {
+    @include px2rem('padding', 12px 24px);
+    // @include px2rem('width', 60px);
+    @include font(24px);
+
+    font-family: 'PingFangSC-Regular';
+    text-align: center;
+    height: 100%;
+    color: $date-color;
+    letter-spacing: 0;
+    line-height: 1;
+    width: calc(100% / 7);
+    box-sizing: border-box;
+  }
+
+  &-panel {
+    @extend .w-m-calendar-col;
+
+    @include px2rem('padding', 0 0 16px);
+
+    background: none;
+    display: flex;
+    flex-flow: wrap;
+    position: relative;
+  }
+
+  &-date {
+    @extend .w-m-calendar-week;
+
+    @include px2rem('padding', 20px);
+
+    position: relative;
+    height: auto;
+    cursor: pointer;
+  }
+
+  &-num {
+    @include px2rem('height', 60px);
+    @include font(24px);
+
+    line-height: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: relative;
+    width: 100%;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      border-radius: 50%;
+      transition: transform 0.2s;
+      transform: scale(0.6);
+    }
+  }
+
+  &-text {
+    @include px2rem('bottom', 4px);
+    @include font(24px);
+
+    position: absolute;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    line-height: 1;
+    color: $choice-color;
+  }
+
+  &-next,
+  &-prev {
+    color: $disabled-color;
+  }
+
+  &-active {
+    color: $write;
+
+    &::before {
+      background: $data-active;
+      transform: scale(1);
+    }
+  }
+
+  &-today {
+    color: $today-color;
+  }
+
+  &-choice {
+    color: $choice-color;
+  }
+
+  &-disabled {
+    color: $disabled-color;
+    cursor: no-drop;
   }
 }
