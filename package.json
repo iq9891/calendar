@@ -151,5 +151,8 @@
   },
   "pre-commit": [
     "lint-staged"
-  ]
+  ],
+  "dependencies": {
+    "em-underline": "^1.2.2"
+  }
 }
