@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>date 挂载方法 | calendar</title>
+    <meta name="description" content="日历组件 Vue 2.x 实现">
+    <link rel="icon" href="/logo.png">
+    
+    <link rel="preload" href="/assets/css/styles.4c717c2e.css" as="style"><link rel="preload" href="/assets/js/app.4c717c2e.js" as="script"><link rel="preload" href="/assets/js/4.41c9057f.js" as="script"><link rel="prefetch" href="/assets/css/2.styles.4d515d21.css"><link rel="prefetch" href="/assets/css/3.styles.90f01f4c.css"><link rel="prefetch" href="/assets/css/5.styles.d0864d0a.css"><link rel="prefetch" href="/assets/js/1.86bec7be.js"><link rel="prefetch" href="/assets/js/2.4d515d21.js"><link rel="prefetch" href="/assets/js/3.90f01f4c.js"><link rel="prefetch" href="/assets/js/5.d0864d0a.js"><link rel="prefetch" href="/assets/js/6.fadcb86e.js">
+    <link rel="stylesheet" href="/assets/css/styles.4c717c2e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">calendar</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/fe6/calendar" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"> <a href="https://github.com/fe6/calendar" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">Home</a></li><li><a href="/mcalendar.html" class="sidebar-link">m-calendar 日历</a></li><li><a href="/date.html" class="active sidebar-link">date 挂载方法</a></li></ul> </div> <div class="page"> <div class="content"><h1 id="date-挂载方法"><a href="#date-挂载方法" aria-hidden="true" class="header-anchor">#</a> date 挂载方法</h1> <blockquote><p>本组件还提供了对外的工具方法</p></blockquote> <br> <br> <br> <br> <p><button>点击获取当前月份天数</button>: 0
+  <br> <button>获取时间归零的当前日期的时间戳</button>:0
+  <br> <button>获取当前日期</button>:0
+  <br> <button>获取当前日期，时间清零</button>:0
+  <br> <button>获取每月第一天的星期</button>:0
+  <br> <button>保持两位</button>:1
+  <br> <button>获取年份</button>:0
+  <br> <button>获取月份</button>:0
+  <br> <button>获取日期自动补零</button>:0
+  <br> <button>获取日期不补零</button>:0
+  <br> <button>获取星期</button>:0
+</p></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">上次更新: </span> <span class="time">2019-1-8 11:18:19</span></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/mcalendar.html" class="prev">
+          m-calendar 日历
+        </a></span> <!----></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.4c717c2e.js" defer></script><script src="/assets/js/4.41c9057f.js" defer></script>
+  </body>
+</html>
