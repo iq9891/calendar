@@ -10,8 +10,8 @@ const cpts = [
 const install = (Vue) => {
   if (install.installed) return;
 
-  cpts.forEach((key) => {
-    Vue.component(cpts[key].name, cpts[key]);
+  cpts.forEach((cptItem) => {
+    Vue.component(cptItem.name, cptItem);
   });
 
   if (!Vue.prototype.$wdate) {
