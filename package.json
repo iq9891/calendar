@@ -1,6 +1,6 @@
 {
   "name": "@fe6/calendar",
-  "version": "1.0.0-alpha.2",
+  "version": "1.0.0-alpha.3",
   "description": "vue 2.x 日历组件",
   "main": "dist/calendar.js",
   "unpkg": "dist/calendar.js",
