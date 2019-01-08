@@ -1,5 +1,5 @@
 // 组件
-import PMCalendar from './mcalendar/MCalendar';
+import WMCalendar from './mcalendar/MCalendar';
 // 日期方法
 import * as dateTool from './utils/date';
 
