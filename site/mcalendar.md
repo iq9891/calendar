@@ -1,5 +1,5 @@
 # m-calendar 日历
-> 移动端，单位 rem
+> 移动端，单位 rem，目前不支持 v-model
 
 ## 基本
 
@@ -40,7 +40,19 @@
 
 |参数|说明|类型|是否必填|默认值|
 |---|----|---|-------|-----|
-|target|设置 Affix 需要监听其滚动事件的元素，值为一个返回对应 DOM 元素的函数|() => HTMLElement|否|() => window|
+|weekText|周的文案|Array|否|['日', '一', '二', '三', '四', '五', '六']|
+|monthText|头部月的文案|String|否|月|
+|yearText|头部年的文案|String|否|年|
+|animate|头部年和月数字是否动画|Boolean|否|false|
+|animateTime|头部年和月数字动画的时间|Number|否|0.5|
+|choiceText|已选状态的文案|String|否|已选|
+|prevDisabled|上月切换按钮是否禁用|Boolean|否|无|
+|nextDisabled|下月切换按钮是否禁用|Boolean|否|无|
+|disabledDate|不可选择的日期|(currentDate: moment) => boolean|否|() => false|
+|choicedDate|已选择的日期|(currentDate: moment) => boolean|否|() => false|
+|change|点击选中的事件回调，返回 `当前日期时间戳` , `当前日期` , `当前月份` , `当前年份`|Function|否|() => {}|
+|prev|点击上月的的回调，返回 `当前日期` , `当前月份` , `当前年份`|Function|否|() => {}|
+|next|点击下月的的回调，返回 `当前日期` , `当前月份` , `当前年份`|Function|否|() => {}|
 
 #### 事件
 
@@ -109,12 +121,12 @@ export default {
   }
 
   & .sidebar {
-    width: 27%;
+    width: 16%;
     top: 57.6px;
   }
 
   & .page {
-    padding-left: 27%;
+    padding-left: 16%;
   }
 
   & h1 {
