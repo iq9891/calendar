@@ -1,7 +1,7 @@
 // 组件
 import PMCalendar from './mcalendar/index';
 // 日期方法
-import * as dateTool from '../utils/date';
+import * as dateTool from './utils/date';
 
 const cpts = {
   PMCalendar,
