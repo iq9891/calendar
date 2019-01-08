@@ -10,10 +10,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/water/calendar.git"
+    "url": "git+https://github.com/fe6/calendar.git"
   },
   "keywords": [
-    "water",
+    "@fe6/calendar",
+    "@fe6",
+    "fe6",
     "calendar",
     "wap",
     "m-calendar"
@@ -21,9 +23,9 @@
   "author": "李梦龙 <649076408@qq.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/water/calendar/issues"
+    "url": "https://github.com/fe6/calendar/issues"
   },
-  "homepage": "https://github.com/water/calendar#readme",
+  "homepage": "https://github.com/fe6/calendar#readme",
   "scripts": {
     "start": "vuepress dev site",
     "build:site": "export GH=1 && vuepress build site",
@@ -64,6 +66,7 @@
     "copy-webpack-plugin": "^4.5.1",
     "cross-env": "^5.1.4",
     "css-loader": "^0.28.11",
+    "em-underline": "^1.2.2",
     "eslint": "^5.0.0",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-friendly-formatter": "^4.0.0",
@@ -154,8 +157,5 @@
   },
   "pre-commit": [
     "lint-staged"
-  ],
-  "dependencies": {
-    "em-underline": "^1.2.2"
-  }
+  ]
 }

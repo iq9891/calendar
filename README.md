@@ -8,9 +8,7 @@
 
 >一套企业级的 UI 设计语言和 Vue.js 实现。
 
-<!-- [![Greenkeeper badge](https://badges.greenkeeper.io/fe6/calendar.svg)](https://greenkeeper.io)
-[![calendar 持续集成](https://img.shields.io/travis/fe6/calendar.svg?style=flat)](https://travis-ci.org/fe6/calendar)
-[![Codecov 单元测试覆盖率](https://img.shields.io/codecov/c/github/fe6/calendar/master.svg?style=flat)](https://codecov.io/gh/fe6/calendar/branch/master) -->
+[![@fe6/calendar](https://img.shields.io/npm/v/@fe6/calendar.svg?style=flat-square)](https://www.npmjs.org/package/@fe6/calendar)
 
 ![GitHub language count](https://img.shields.io/github/languages/count/fe6/calendar.svg)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/fe6/calendar.svg)
