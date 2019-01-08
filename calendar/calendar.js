@@ -3,15 +3,15 @@ import PMCalendar from './mcalendar/MCalendar';
 // 日期方法
 import * as dateTool from './utils/date';
 
-const cpts = {
-  PMCalendar,
-};
+const cpts = [
+  WMCalendar,
+];
 
 const install = (Vue) => {
   if (install.installed) return;
 
-  Object.keys(cpts).forEach((key) => {
-    Vue.component(key, cpts[key]);
+  cpts.forEach((key) => {
+    Vue.component(cpts[key].name, cpts[key]);
   });
 
   if (!Vue.prototype.$wdate) {
