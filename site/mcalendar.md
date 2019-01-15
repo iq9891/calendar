@@ -52,6 +52,7 @@
 |choicedDate|已选择的日期|(currentDate: moment) => boolean|否|() => false|
 |change|点击选中的事件回调，返回 `当前日期时间戳` , `当前日期` , `当前月份` , `当前年份`|Function|否|() => {}|
 |prev|点击上月的的回调，返回 `当前日期` , `当前月份` , `当前年份`|Function|否|() => {}|
+|today|定位当前蓝色高亮选中|Date|否|new Date()|
 |next|点击下月的的回调，返回 `当前日期` , `当前月份` , `当前年份`|Function|否|() => {}|
 
 #### 事件

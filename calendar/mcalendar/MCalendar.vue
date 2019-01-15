@@ -75,7 +75,7 @@ export default {
   name: 'WMCalendar',
   data() {
     return {
-      today: null,
+      // today: null,
       yearNumber: 1970,
       yearAnim: 1970,
       monthNumber: 0,
@@ -84,8 +84,8 @@ export default {
       touchStartPosY: 0,
       touchPlace: 0, // 如果不是 0 ，按住滚动了就不触发 touchend
 
-      // activeDay: 0,
-      activeDay: clearHours(new Date()),
+      activeDay: 0,
+      // activeDay: clearHours(new Date(this.todayValue)),
     };
   },
   model: {
@@ -131,6 +131,10 @@ export default {
     },
     prevDisabled: Boolean,
     nextDisabled: Boolean,
+    today: {
+      type: Date,
+      default: () => initTimeDate(),
+    },
     change: {
       type: Function,
       default: () => {},
@@ -145,6 +149,9 @@ export default {
     },
   },
   computed: {
+    // todayValue() {
+    //   return this.today;
+    // },
     yearCount() {
       return this.animate ? this.yearAnim.toFixed(0) : this.yearNumber;
     },
@@ -232,7 +239,7 @@ export default {
     },
   },
   mounted() {
-    this.mountedInit();
+    this.mountedInit(this.today);
     this.$nextTick(() => {
       this.setSize();
     });
@@ -247,10 +254,10 @@ export default {
         this.itemHeight = 0;
       }
     },
-    mountedInit() {
-      this.today = initTimeDate();
-      this.yearNumber = getYear(this.today);
-      this.monthNumber = getMonth(this.today);
+    mountedInit(today) {
+      this.activeDay = clearHours(new Date(today));
+      this.yearNumber = getYear(today);
+      this.monthNumber = getMonth(today);
     },
     wapPrev(event) {
       if (browser.versions().isMobile) {
@@ -330,6 +337,12 @@ export default {
     },
     monthNumber(val) {
       TweenLite.to(this.$data, this.animateTime, { monthAnim: val });
+    },
+    today(val) {
+      this.mountedInit(val);
+      this.$nextTick(() => {
+        this.setSize();
+      });
     },
   },
 };
