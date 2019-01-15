@@ -37,9 +37,11 @@
           {{ day }}
         </slot>
         <!-- 默认 -->
-        <span class="w-m-calendar-num" :class="{
-          'w-m-calendar-active': day.active,
-          }" v-if="!hasScopedSlotDay" ref="dayItem" :style="{height: itemHeight}">{{ day.num }}</span>
+        <div class="w-m-calendar-num" v-if="!hasScopedSlotDay" ref="dayItem" :style="{height: itemHeight}">
+          <span class="w-m-calendar-inner" :class="{
+            'w-m-calendar-active': day.active,
+            }" :style="{lineHeight: itemHeight}">{{ day.num }}</span>
+        </div>
         <p class="w-m-calendar-text" v-if="day.choice && !day.active && !hasScopedSlotDay">{{ choiceText }}</p>
       </div>
       <div class="w-m-calendar-date w-m-calendar-next" v-for="day in nextMonthDays">
